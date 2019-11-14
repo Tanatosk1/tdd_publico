@@ -9,5 +9,8 @@ end
 it "Existe un nombre de alimento" do
 		  expect(@carne_vaca.instance_variable_defined?("@nombre")).to eq(true)
 end
+it "Existe cantidad de gases de efecto invernadero" do
+	 	  expect(@carne_vaca.instance_variable_defined?("@gei")).to eq(true)
+end
 
 end
