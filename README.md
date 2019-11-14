@@ -1,39 +1,26 @@
-# Alimentos
+<h1 id="titulo" style="background-color: red">PRACTICA 6 - DESARROLLO DIRIGIDO POR PRUEBAS TDD</h1>
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/alimentos`. To experiment with that code, run `bin/console` for an interactive prompt.
+<h3 id="info"><strong>Autor:</strong> David Marcos Ramallo Gracia </h3>
 
-TODO: Delete this and the text above, and describe your gem
+<p><strong>Información del proyecto</strong></p>
+<ul>
+	<li><u>Centro</u>: Escuela superior de Ingeniería y tecnología de la Universidad de La Laguna</li>
+	<li><u>Grado</u>: Grado en ingeniería informática</li>
+	<li><u>Asignatura</u>: Lenguajes y paradigmas de programación</li>
+	<li><u>Curso</u>: Tercero</li>
+	<li><u>Fecha</u>: 15/11/2019</li>
+	<li><u>Objetivo</u>: Cálculo de nutrientes y alimentos</li>
 
-## Installation
+</ul>
 
-Add this line to your application's Gemfile:
+<p><strong>Información del autor</strong></p>
+<ul>
+	<li><u>Correo</u>: alu0101061320@ull.edu.es</li>
+	<li><u>DNI</u>: 78573580Z</li>
+	<li><u>Turno</u>: PE 103</li>
+</ul>
 
-```ruby
-gem 'alimentos'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install alimentos
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/alimentos. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
-
-## Code of Conduct
-
-Everyone interacting in the Alimentos project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/alimentos/blob/master/CODE_OF_CONDUCT.md).
+<p><strong>Referencias</strong></p>
+<ul>
+	<li><u>Guión de la práctica</u>: <a href="https://campusvirtual.ull.es/1920/pluginfile.php/112854/mod_resource/content/31/prct6.pdf" target="_blank">guión práctica 6 - TDD</a></li>
+</ul>
