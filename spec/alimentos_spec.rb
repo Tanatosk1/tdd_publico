@@ -12,5 +12,8 @@ end
 it "Existe cantidad de gases de efecto invernadero" do
 	 	  expect(@carne_vaca.instance_variable_defined?("@gei")).to eq(true)
 end
+it "Existe cantidad de terreno utilizado" do
+	 	  expect(@carne_vaca.instance_variable_defined?("@terreno")).to eq(true)
+end
 
 end
