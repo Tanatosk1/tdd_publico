@@ -21,7 +21,10 @@ end
 it "Existe un metodo para obtener las emisiones de gases de efecto invernadero" do
 		  expect(@carne_vaca.gei).to eq(50.0)
 end
- it "Existe un metodo para obtener el alimento formateado" do
+it "Existe un método para obtener el terreno utilizado" do
+		  expect(@carne_vaca.terreno).to eq(164.0)
+end
+it "Existe un metodo para obtener el alimento formateado" do
 	 	  expect(@carne_vaca.to_s).to eq("Nombre: Carne de vaca.\nProteinas: 21.1\nCarbohidratos: 0.0\nLipidos: 3.1\nGEI: 50.0\nTerreno: 164.0")
 end
 end

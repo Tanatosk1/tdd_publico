@@ -3,9 +3,12 @@ class Alimento
    def initialize(nombre, proteinas, carbohidratos, lipidos, gei, terreno)
     @nombre = nombre
     @gei = gei
-    @terreno = terreno    
+    @terreno = terreno
+    @proteinas = proteinas
+    @carbohidratos = carbohidratos
+    @lipidos = lipidos    
    end
    def to_s
-	   "Nombre: #{@nombre}.\nGEI:#{@gei}."
+	   "Nombre: #{@nombre}.\nProteinas: #{@proteinas}\nCarbohidratos: #{@carbohidratos}\nLipidos: #{@lipidos}\nGEI: #{@gei}."
    end
 end
