@@ -15,5 +15,7 @@ end
 it "Existe cantidad de terreno utilizado" do
 	 	  expect(@carne_vaca.instance_variable_defined?("@terreno")).to eq(true)
 end
-
+it "Existe un metodo para obtener el nombre del alimento" do
+		  expect(@carne_vaca.nombre).to eq("Carne de vaca")	  
+end
 end
