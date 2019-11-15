@@ -18,4 +18,7 @@ end
 it "Existe un metodo para obtener el nombre del alimento" do
 		  expect(@carne_vaca.nombre).to eq("Carne de vaca")	  
 end
+it "Existe un metodo para obtener las emisiones de gases de efecto invernadero" do
+		  expect(@carne_vaca.gei).to eq(50.0)
+end
 end
