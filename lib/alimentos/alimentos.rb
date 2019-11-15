@@ -1,5 +1,5 @@
 class Alimento
-   attr_reader:nombre, :gei
+   attr_reader:nombre, :gei, :terreno
    def initialize(nombre, proteinas, carbohidratos, lipidos, gei, terreno)
     @nombre = nombre
     @gei = gei
@@ -9,6 +9,6 @@ class Alimento
     @lipidos = lipidos    
    end
    def to_s
-	   "Nombre: #{@nombre}.\nProteinas: #{@proteinas}\nCarbohidratos: #{@carbohidratos}\nLipidos: #{@lipidos}\nGEI: #{@gei}."
+	   "Nombre: #{@nombre}.\nProteinas: #{@proteinas}\nCarbohidratos: #{@carbohidratos}\nLipidos: #{@lipidos}\nGEI: #{@gei}\nTerreno:#{@terreno}"
    end
 end
