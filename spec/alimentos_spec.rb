@@ -82,8 +82,8 @@ context "Creación de nodo y uso" do
 end
 context "Creación de lista" do
 	it "Debe existir una lista con su cabeza y su cola" do
-		expect(@l.Head).to eq nil
-		expect(@l.Tail).to eq nil
+		expect(@l.head).to eq nil
+		expect(@l.tail).to eq nil
 	end
 end
 
