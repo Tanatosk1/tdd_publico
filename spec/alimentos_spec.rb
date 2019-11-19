@@ -1,6 +1,6 @@
 require 'alimentos'
 RSpec.describe Alimentos do
-	before :all do
+	before :each do
 		@carne_vaca = Alimento.new("Carne de vaca", 21.1, 0.0, 3.1, 50.0, 164.0)
 		@carne_cordero = Alimento.new("Carne de cordero", 18.0, 0.0, 17.0, 20.0, 185.0)
 	        @camarones = Alimento.new("Camarones", 17.6, 1.5, 0.6, 18.0, 2.0)
@@ -20,7 +20,8 @@ RSpec.describe Alimentos do
 		@lista_alimentos = [@cafe,@leche_vaca, @huevos, @pollo, @tofu, @nuez, @cerveza, @salmon, @carne_vaca]
 	        @lista_cantidades = [2,4,3,7,10,2,7,4,6]
 
-		@n1_prueba = Node.new(@carne_vaca,nil,nil)
+		@n = Node.new(@carne_vaca,nil, nil)
+
 end
 it "has a version number" do
 	expect(Alimentos::VERSION).not_to be nil
@@ -59,8 +60,8 @@ context "Se puede acceder a las variables de instancia" do
 end
 context "Creación de nodo y uso" do
 	it "Debe existir un nodo de la lista con sus datos y su siguiente" do
-		expect(@n1_prueba.next).to eq nil
-		expect(@n1_prueba.prev).not_to eq nil
+		expect(@n.next).to eq nil
+		expect(@n.prev).to eq nil
 	end
 end
 
