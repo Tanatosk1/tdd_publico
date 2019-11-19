@@ -1,3 +1,6 @@
+
+Node = Struct.new(:value, :next, :prev)
+
 class Alimento
    attr_reader :nombre, :gei, :terreno, :proteinas
    def initialize(nombre, proteinas, carbohidratos, lipidos, gei, terreno)
