@@ -19,6 +19,8 @@ RSpec.describe Alimentos do
 
 		@lista_alimentos = [@cafe,@leche_vaca, @huevos, @pollo, @tofu, @nuez, @cerveza, @salmon, @carne_vaca]
 	        @lista_cantidades = [2,4,3,7,10,2,7,4,6]
+
+		@n1_prueba = Node.new(@carne_vaca,nil,nil)
 end
 it "has a version number" do
 	expect(Alimentos::VERSION).not_to be nil
@@ -34,26 +36,32 @@ it "Existe cantidad de terreno utilizado" do
 	 	  expect(@carne_vaca.instance_variable_defined?("@terreno")).to eq(true)
 end
 end
+
 context "Se puede acceder a las variables de instancia" do
-it "Existe un metodo para obtener el nombre del alimento" do
+	it "Existe un metodo para obtener el nombre del alimento" do
 		  expect(@carne_vaca.nombre).to eq("Carne de vaca")	  
-end
-it "Existe un metodo para obtener las emisiones de gases de efecto invernadero" do
+	end
+	it "Existe un metodo para obtener las emisiones de gases de efecto invernadero" do
 		  expect(@carne_vaca.gei).to eq(50.0)
-end
-it "Existe un método para obtener el terreno utilizado" do
+	end
+	it "Existe un método para obtener el terreno utilizado" do
 		  expect(@carne_vaca.terreno).to eq(164.0)
-end
-it "Existe un metodo para obtener el alimento formateado" do
+	end
+	it "Existe un metodo para obtener el alimento formateado" do
 		  expect(@carne_vaca.to_s).to eq("Nombre: Carne de vaca.\nProteinas: 21.1\nCarbohidratos: 0.0\nLipidos: 3.1\nGEI: 50.0\nTerreno: 164.0")
-end
-it "Existe un metodo para obtener valor energetico del alimento"do
+	end
+	it "Existe un metodo para obtener valor energetico del alimento"do
 	 	  expect(@carne_vaca.valorEnergetico).to eq(112.3)
-end
-it "Existe metodo impacto ambiental" do
+	end
+	it "Existe metodo impacto ambiental" do
 		  expect(@carne_vaca.impactoAmbiental(@lista_alimentos, @lista_cantidades,0)).to eq(1559.7199999999998)
+	end
+end
+context "Creación de nodo y uso" do
+	it "Debe existir un nodo de la lista con sus datos y su siguiente" do
+		expect(@n1_prueba.next).to eq nil
+		expect(@n1_prueba.prev).not_to eq nil
+	end
 end
 
-end
- 
 end
