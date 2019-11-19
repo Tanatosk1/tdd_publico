@@ -36,9 +36,6 @@ RSpec.describe Alimentos do
 		@n14 = Node.new(@lentejas, nil, nil)
 		@n15 = Node.new(@nuez, nil, nil)
 
-		@n1_prueba = Node.new(carne_vaca, nil, nil)
-		@n2_prueba = Node.new(carne_cordero, nil, nil)
-
 		@l = List.new()
 
 
@@ -99,6 +96,7 @@ context "Creación de lista" do
 		@l.push_start(@n2)
 		@l.push_start(@n3)
 		@l.push_start(@n4)
+		expect(@l.get_size()).to eq(3)
 	end
 end
 
