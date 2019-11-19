@@ -50,5 +50,23 @@ class List
 		@head = nil
 		@tail = nil
 	end
+	
+	def push_start(value)
+		if(@size == 0)
+			@tail = value
+			value.next = nil
+		else
+			@head.prev = value
+			value.next = @head
+		end
+
+		@head = value
+		value.prev = nil
+		@size = @size + 1
+	end
+
+	def get_size()
+		@size
+	end
 
 end

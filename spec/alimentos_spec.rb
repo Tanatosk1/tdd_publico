@@ -38,8 +38,6 @@ RSpec.describe Alimentos do
 
 		@l = List.new()
 
-		@l.push_start(@n1)
-
 end
 it "has a version number" do
 	expect(Alimentos::VERSION).not_to be nil
