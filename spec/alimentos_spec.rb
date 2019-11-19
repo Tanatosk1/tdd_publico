@@ -36,11 +36,17 @@ RSpec.describe Alimentos do
 		@n14 = Node.new(@lentejas, nil, nil)
 		@n15 = Node.new(@nuez, nil, nil)
 
+		@n1_test = Node.new(@carne_vaca, nil, nil)
+		@n2_test = Node.new(@hueos, nil, nil)
+
 		@l = List.new()
+		@l2 =  List.new()
 
-
+		@l2.push_start(@n1_test)
+		@l2.push_start(@n2_test)
 
 end
+
 it "has a version number" do
 	expect(Alimentos::VERSION).not_to be nil
 end
@@ -97,6 +103,19 @@ context "Creación de lista" do
 		@l.push_start(@n3)
 		@l.push_start(@n4)
 		expect(@l.get_size()).to eq(3)
+	end
+	it "Se extrae el primer elemento de la lista" do
+		expect(@l2.size).to eq(2)
+		@aux = @l2.pop_start()
+		expect(@l2.size).to eq(1)
+		expect(@aux).to eq(@n2_test)
+	end
+	it "Se extrae el ultimo elemento de la lista" do
+		@l2.push_start(@n2_test)
+		expect(@l2.size).to eq(3)
+		@aux = @l2.pop_end()
+		expect(@l2.size).to eq(2)
+		expect(@aux).to eq(@n1_test)
 	end
 end
 
