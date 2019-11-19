@@ -20,7 +20,26 @@ RSpec.describe Alimentos do
 		@lista_alimentos = [@cafe,@leche_vaca, @huevos, @pollo, @tofu, @nuez, @cerveza, @salmon, @carne_vaca]
 	        @lista_cantidades = [2,4,3,7,10,2,7,4,6]
 
-		@n = Node.new(@carne_vaca,nil, nil)
+		@n1 = Node.new(@carne_vaca,nil, nil)
+		@n2 = Node.new(@carne_cordero, nil, nil)
+		@n3 = Node.new(@camarones, nil, nil)
+		@n4 = Node.new(@chocolate, nil, nil)
+		@n5 = Node.new(@salmon, nil, nil)
+		@n6 = Node.new(@cerdo, nil, nil)
+		@n7 = Node.new(@pollo, nil, nil)
+		@n8 = Node.new(@queso, nil, nil)
+		@n9 = Node.new(@cerveza, nil, nil)
+		@n10 = Node.new(@leche_vaca, nil, nil)
+		@n11 = Node.new(@huevos, nil, nil)
+		@n12 = Node.new(@cafe, nil, nil)
+		@n13 = Node.new(@tofu, nil, nil)
+		@n14 = Node.new(@lentejas, nil, nil)
+		@n15 = Node.new(@nuez, nil, nil)
+
+		@l = Lista.new()
+
+		@l.push_start(@n1)
+		@l.push_start(@n2)
 
 end
 it "has a version number" do
@@ -60,8 +79,14 @@ context "Se puede acceder a las variables de instancia" do
 end
 context "Creación de nodo y uso" do
 	it "Debe existir un nodo de la lista con sus datos y su siguiente" do
-		expect(@n.next).to eq nil
-		expect(@n.prev).to eq nil
+		expect(@n1.next).to eq nil
+		expect(@n1.prev).to eq nil
+	end
+end
+context "Creación de lista" do
+	it "Debe existir una lista con su cabeza y su cola" do
+		expect(@l.Head).not_to eq nil
+		expect(@l.Tail).not_to eq nil
 	end
 end
 
