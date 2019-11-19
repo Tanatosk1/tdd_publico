@@ -65,6 +65,29 @@ class List
 		@size = @size + 1
 	end
 
+	def pop_start()
+		if(@size == 0)
+			puts "La lista está vacía"
+		else
+			aux = @head
+			(@head.next).prev = nil
+			@head = @head.next
+			@size = @size - 1
+			return aux
+		end
+	end
+
+	def pop_end()
+		if(@size == 0)
+		else
+			aux = @tail
+			(@tail.prev).next = nil
+			@tail = @tail.prev
+			@size = @size -1
+			return aux
+		end
+	end
+
 	def get_size()
 		@size
 	end
