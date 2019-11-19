@@ -38,6 +38,8 @@ RSpec.describe Alimentos do
 
 		@l = List.new()
 
+		@l.push_start(@n1)
+
 end
 it "has a version number" do
 	expect(Alimentos::VERSION).not_to be nil
@@ -84,6 +86,11 @@ context "Creación de lista" do
 	it "Debe existir una lista con su cabeza y su cola" do
 		expect(@l.head).to eq nil
 		expect(@l.tail).to eq nil
+	end
+	it "Se puede insertar un elemento en la lista" do
+		expect(@l.get_size()).to eq(0)
+		@l.push_start(@n1)
+		expect(@l.get_size()).to eq(1)
 	end
 end
 
