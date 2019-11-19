@@ -36,10 +36,7 @@ RSpec.describe Alimentos do
 		@n14 = Node.new(@lentejas, nil, nil)
 		@n15 = Node.new(@nuez, nil, nil)
 
-		@l = Lista.new()
-
-		@l.push_start(@n1)
-		@l.push_start(@n2)
+		@l = List.new()
 
 end
 it "has a version number" do
@@ -85,8 +82,8 @@ context "Creación de nodo y uso" do
 end
 context "Creación de lista" do
 	it "Debe existir una lista con su cabeza y su cola" do
-		expect(@l.Head).not_to eq nil
-		expect(@l.Tail).not_to eq nil
+		expect(@l.Head).to eq nil
+		expect(@l.Tail).to eq nil
 	end
 end
 
