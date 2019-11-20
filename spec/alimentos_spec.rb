@@ -150,7 +150,7 @@ context "Expectativas de emisiones" do
 		end
 		anio = 0
 		anio = sum * 365
-		expect(anio).to eq(1514.75)
+		expect(anio.round(2)).to eq(1514.75)
 	end
 end
 
