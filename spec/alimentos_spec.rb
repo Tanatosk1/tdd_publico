@@ -152,6 +152,20 @@ context "Expectativas de emisiones" do
 		anio = sum * 365
 		expect(anio.round(2)).to eq(1514.75)
 	end
+
+	it "Crear expectativa de metros cuadrados utilizados" do
+		sum = 0
+		while(@dieta_espanola.size != 0) do
+			if @dieta_espanola.tail.value.nombre == "Lentejas"
+				sum += @dieta_espanola.pop_end().value.terreno * 3.5
+			elsif @dieta_espanola.tail.value.nombre == "Nuez"
+				sum += @dieta_espanola.pop_end().value.terreno * 1.5
+			else
+				sum += @dieta_espanola.pop_end().value.terreno
+			end
+		end
+		expect(sum.round(2)).to eq(27.15)
+	end
 end
 
 end
