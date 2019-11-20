@@ -81,7 +81,9 @@ class List
 		if(@size == 0)
 		else
 			aux = @tail
-			(@tail.prev).next = nil
+			if(@size != 1)
+				(@tail.prev).next = nil
+			end
 			@tail = @tail.prev
 			@size = @size -1
 			return aux

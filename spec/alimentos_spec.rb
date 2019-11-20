@@ -44,7 +44,11 @@ RSpec.describe Alimentos do
 
 		@l2.push_start(@n1_test)
 		@l2.push_start(@n2_test)
-
+                
+		@dieta_espanola = List.new()
+		@dieta_espanola.push_start(@n14)
+                @dieta_espanola.push_start(@n4)
+		@dieta_espanola.push_start(@n15)
 end
 
 it "has a version number" do
@@ -116,6 +120,37 @@ context "Creación de lista" do
 		@aux = @l2.pop_end()
 		expect(@l2.size).to eq(2)
 		expect(@aux).to eq(@n1_test)
+	end
+end
+context "Expectativas de emisiones" do
+	it "Crear expectativa de emisiones diarias de gases de efecto invernadero" do
+		sum = 0
+		while(@dieta_espanola.size != 0) do
+			if @dieta_espanola.tail.value.nombre == "Lentejas"
+				sum += @dieta_espanola.pop_end().value.gei * 3.5
+			elsif @dieta_espanola.tail.value.nombre == "Nuez"
+				sum += @dieta_espanola.pop_end().value.gei * 1.5
+			else 
+				sum += @dieta_espanola.pop_end().value.gei
+			end
+
+		end
+		expect(sum).to eq(4.15)
+	end
+	it "Crear expectativa de emisiones anuales de gases de efecto invernadero" do
+		sum = 0
+		while(@dieta_espanola.size != 0) do
+			if @dieta_espanola.tail.value.nombre == "Lentejas"
+				sum += @dieta_espanola.pop_end().value.gei * 3.5
+			elsif @dieta_espanola.tail.value.nombre == "Nuez"
+				sum += @dieta_espanola.pop_end().value.gei * 1.5
+			else
+				sum += @dieta_espanola.pop_end().value.gei
+			end
+		end
+		anio = 0
+		anio = sum * 365
+		expect(anio).to eq(1514.75)
 	end
 end
 
