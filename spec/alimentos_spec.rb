@@ -164,6 +164,32 @@ it "Emisiones anuales de GEI" do
 	expect(sumGEIanualLoc.round(2)).to eq(27973.6)
 	expect(sumGEIanualVasca.round(2)).to eq(24893.0)
 end
+context "Listas doblemente enlazadas: se pueden enumerar" do	
+	before :each do
+		@lista_enumerable = Alimento::Lista.new
+		@lista_enumerable.insert_head(@pollo)
+		@lista_enumerable.insert_head(@tofu)
+		@lista_enumerable.insert_head(@carne_vaca)
+		@lista_enumerable.insert_head(@cerveza)
+	end
+	it "Utilizamos método collect" do
+		expect(@lista_enumerable.collect {|x| x}).to eq([@cerveza, @carne_vaca, @tofu, @pollo])
+	end
+	it "Utilizamos método select" do
+		expect(@lista_enumerable.select {|x| x.valorEnergetico}).to eq([@cerveza, @carne_vaca, @tofu, @pollo])
+	end
+	it "Utilizamos método max" do
+		expect(@lista_enumerable.max).to eq(@pollo)
+	end
+	it "Utilizamos método min" do
+		expect(@lista_enumerable.min).to eq(@cerveza)
+	end
+	it "Utilizamos método sort" do
+		expect(@lista_enumerable.sort {|a,b| a<=>b}).to eq([@cerveza, @tofu, @carne_vaca, @pollo])					
+	end
+end
+
+   end
 describe "Node" do
 	before :each do
        		@nodo1 = Alimento::Node.new(@carne_vaca,nil,nil)
@@ -178,7 +204,6 @@ describe "Node" do
 			expect(@nodo1.prev).to be(nil)
 		end
 	end
-end
 end
 end
 #Se pueden comparar alimentos según su eficiencia energética
@@ -203,4 +228,3 @@ context "Se pueden comparar alimentos segun su eficiencia energetica" do
 	end
 end
 end
-
