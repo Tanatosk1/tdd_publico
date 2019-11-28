@@ -254,6 +254,51 @@ end
       		  end
 	  end
   end
+  describe "PlatoB" do
+	  before :each do
+	   	  @lista_alimentos2 = Alimento::Lista.new
+	   	  @lista_alimentos2.insert_head(@salmon)
+	    	  @lista_alimentos2.insert_head(@lentejas)
+	     	  @lista_alimentos2.insert_head(@carne_vaca)
+       		  @lista_alimentos2.insert_head(@cafe)
+		  @lista_cantidades2 = Alimento::Lista.new
+  		  @lista_cantidades2.insert_head(1)
+		  @lista_cantidades2.insert_head(2)
+		  @lista_cantidades2.insert_head(1)
+		  @lista_cantidades2.insert_head(3)
+		  @plato2 = Alimento::PlatoB.new("plato2", @lista_alimentos2, @lista_cantidades2)
+		  @lista_alimentos3 = Alimento::Lista.new	
+      		  @lista_alimentos3.insert_head(@salmon)
+		  @lista_alimentos3.insert_head(@lentejas)
+		  @lista_alimentos3.insert_head(@carne_vaca)
+	     	  @lista_alimentos3.insert_head(@pollo)	
+		  @lista_cantidades3 = Alimento::Lista.new	
+	 	  @lista_cantidades3.insert_head(1)	
+	  	  @lista_cantidades3.insert_head(2)		
+	      	  @lista_cantidades3.insert_head(1)		
+		  @lista_cantidades3.insert_head(3) 
+	 	  @plato3 = Alimento::PlatoB.new("plato3", @lista_alimentos3, @lista_cantidades3)
+	  end
+context "Impacto ambiental" do
+       	it "Gases GEI diarios" do
+		expect(@plato2.emisionesGEI).to eq(56.8)
+	end
+       	it "Uso terreno" do
+	     	expect(@plato2.uso_terreno).to eq(174.5)
+    	end
+	it "Eficiencia energetica formateada" do
+	    	expect(@plato2.to_s).to eq("Energia Cafe -> 0.4 Energia Carne de vaca -> 112.3 Energia Lentejas -> 314.6 Energia Salmon -> 202.0  || Energia Total -> 629.3 ")
+     	end
+end
+context "tipos platos" do
+	it "comprobar que pertenece a una clase" do
+       		expect(@plato2.instance_of? Alimento::PlatoB).to eq(true)
+	end
+ 	it "comprobar que es un tipo de plato" do
+	 	expect(@plato2.is_a? Alimento::PlatoA).to eq(true)
+  	end
+end
+  end
 end
 #Se pueden comparar alimentos según su eficiencia energética
 context "Se pueden comparar alimentos segun su eficiencia energetica" do
