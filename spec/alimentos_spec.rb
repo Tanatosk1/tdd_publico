@@ -298,6 +298,26 @@ context "tipos platos" do
 	 	expect(@plato2.is_a? Alimento::PlatoA).to eq(true)
   	end
 end
+context "Platos comparables" do
+	it "Existe metodo para comparar que un plato sea menor que otro" do
+		expect(@plato2<@plato3).to eq(true)
+	end
+	it "Existe un metodo para comprobar que un plato es mayor que otro" do
+     		expect(@plato3 > @plato2).to eq(true)
+	end
+	it "Existe metodo para comprobar que un plato es menor o igual que otro" do
+       		expect(@plato2 <= @plato3).to eq(true)
+	end
+	it "Existe metodo para comprobar que un plato es >= que otro" do  
+	      	expect(@plato3 >= @plato2).to eq(true)
+	end
+   	it "Existe metodo para comprobar que un plato es igual a otro" do 
+	      	expect(@plato3 == @plato2).to eq(false)
+	end
+	it "Existe metodo para comprobar que un plato es distinto de otro" do
+	expect(@plato2 != @plato3).to eq(true)
+	end
+end
   end
 end
 #Se pueden comparar alimentos según su eficiencia energética
