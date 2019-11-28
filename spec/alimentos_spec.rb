@@ -227,4 +227,54 @@ context "Se pueden comparar alimentos segun su eficiencia energetica" do
 		expect(@carne_vaca != @cafe).to eq(true)
 	end
 end
+  describe "PlatoA" do
+	  before :each do
+		  @lista_alimentos1 = Alimento::Lista.new
+		  @lista_alimentos1.insert_head(@salmon)	
+	  	  @lista_alimentos1.insert_head(@lentejas)
+    		  @lista_alimentos1.insert_head(@carne_vaca)
+      		  @lista_alimentos1.insert_head(@cafe)
+		  @lista_cantidades1 = Alimento::Lista.new
+  		  @lista_cantidades1.insert_head(1)		
+	    	  @lista_cantidades1.insert_head(2)
+      		  @lista_cantidades1.insert_head(1)
+ 		  @lista_cantidades1.insert_head(3)	
+  		  @plato1 = Alimento::PlatoA.new("plato1", @lista_alimentos1, @lista_cantidades1)   							
+       	  end
+	  context "Obtener atributos de plato" do
+	   	  it "Se puede obtener el nombre del plato" do
+	  		  expect(@plato1.nombre).to eq("plato1")
+    		  end
+      	  end
+     	  context "Existen variables de instancias" do
+      		  it "Existe el conjunto de alimentos" do
+      			  expect(@plato1.instance_variable_defined?("@lista_alimentos")).to eq(true)
+		  end
+		  it "Existe el conjunto de cantidades" do
+			  expect(@plato1.instance_variable_defined?("@lista_cantidades")).to eq(true)
+		  end
+	  end
+ 	  context "porcentajes" do
+	  	  it "porcentaje de proteinas del conjunto de alimentos" do
+	  		  expect(@plato1.por_proteinas).to eq(41.69)
+    		  end
+    		  it "porcentaje de carbohidratos del conjunto de alimentos" do
+	    		  expect(@plato1.por_carbohidratos).to eq(49.1)
+		  end
+       		  it "porcentaje de lipidos del conjunto de alimentos" do
+	    		  expect(@plato1.por_lipidos).to eq(9.21)
+		  end
+  	  end
+     	  context "Valor calórico del plato" do
+       		  it "se accede al VCT del conjunto de alimentos en kcal" do 
+			  expect(@plato1.valor_energetico).to eq(629.3)
+		  end
+	  end
+  	  context "Métodos para imprimir platos" do
+		  it "Obtener conjunto de alimentos formateado" do
+    			  expect(@plato1.to_s).to eq("Cafe -> 3 Carne de vaca -> 1 Lentejas -> 2 Salmon -> 1 ")
+      		  end
+	  end
+  end
 end
+
