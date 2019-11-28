@@ -319,6 +319,31 @@ context "Platos comparables" do
 	end
 end
   end
+  context "los platos son enumerables" do
+	  before :each do
+    		  @lista_platos = Alimento::Lista.new
+  		  @lista_platos.insert_head(@plato1)
+		  @lista_platos.insert_head(@plato2)
+		  @lista_platos.insert_head(@plato3)
+     	  end
+   	  it "Utilizamos: collect" do
+    		  expect(@lista_platos.collect {|x| x}).to eq([@plato3, @plato2, @plato1])
+  	  end
+=begin
+	  it "Utilizamos: select" do
+       		  expect(@lista_platos.select {|x| x==@plato3}).to eq(@plato3)
+	  end
+=end
+	  it "Utilizamos: max" do
+     		  expect(@lista_platos.max).to eq(@plato3)
+	  end
+     	  it "Utilizamos: min" do
+    		  expect(@lista_platos.min).to eq(@plato1)
+	  end							
+	  it "Utilizamos: sort" do			
+    		  expect(@lista_platos.sort {|a,b| a<=>b}).to eq([@plato1, @plato2, @plato3])				
+	  end
+end
 end
 #Se pueden comparar alimentos según su eficiencia energética
 context "Se pueden comparar alimentos segun su eficiencia energetica" do
