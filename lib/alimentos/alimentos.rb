@@ -17,9 +17,6 @@ class Alimento
                 (@proteinas*4 + @carbohidratos*4 + @lipidos*9).round(4)
         end
 
-        def <=>(otroAlimento)
-                valorEnergetico <=> otroAlimento.valorEnergetico
-        end
         def impactoAmbiental(lista_alimentos, lista_cantidades, genero) #genero es para saber si nos referimos a hombre (0) o mujer (1)
                 gei = 0
                 terreno = 0

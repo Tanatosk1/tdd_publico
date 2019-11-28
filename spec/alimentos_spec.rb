@@ -181,5 +181,26 @@ describe "Node" do
 end
 end
 end
+#Se pueden comparar alimentos según su eficiencia energética
+context "Se pueden comparar alimentos segun su eficiencia energetica" do
+    	it "Existe metodo para comparar que un alimento sea menor que otro" do
+	       	expect(@cafe<@carne_vaca).to eq(true)
+	end
+	it "Existe un metodo para comprobar que un alimento es mayor que otro" do
+		expect(@carne_vaca > @cafe).to eq(true)
+	end
+	it "Existe metodo para comprobar que un alimento es menor o igual que otro" do
+		expect(@cafe <= @carne_vaca).to eq(true)
+	end
+	it "Existe metodo para comprobar que un alimento es >= que otro" do
+		expect(@carne_vaca >= @cafe).to eq(true)	
+	end			
+	it "Existe metodo para comprobar que un alimento es igual a otro" do
+		expect(@carne_vaca == @cafe).to eq(false)		
+	end
+	it "Existe metodo para comprobar que un alimento es distinto de otro" do
+		expect(@carne_vaca != @cafe).to eq(true)
+	end
+end
 end
 
