@@ -367,4 +367,59 @@ context "Se pueden comparar alimentos segun su eficiencia energetica" do
 	end
 end
 
+describe "Menú Diétetico" do
+	before :each do
+	   	@lista_alimentos2 = Alimento::Lista.new
+	   	@lista_alimentos2.insert_head(@salmon)
+	    	@lista_alimentos2.insert_head(@lentejas)
+	     	@lista_alimentos2.insert_head(@carne_vaca)
+       		@lista_alimentos2.insert_head(@cafe)
+		@lista_cantidades2 = Alimento::Lista.new
+  		@lista_cantidades2.insert_head(1)
+		@lista_cantidades2.insert_head(2)
+		@lista_cantidades2.insert_head(1)
+		@lista_cantidades2.insert_head(3)
+		@plato_principal = Alimento::PlatoB.new("plato_principal", @lista_alimentos2, @lista_cantidades2)
+		@lista_alimentos3 = Alimento::Lista.new	
+      		@lista_alimentos3.insert_head(@salmon)
+		@lista_alimentos3.insert_head(@lentejas)
+		@lista_alimentos3.insert_head(@carne_vaca)
+	     	@lista_alimentos3.insert_head(@pollo)	
+		@lista_cantidades3 = Alimento::Lista.new	
+	 	@lista_cantidades3.insert_head(1)	
+	  	@lista_cantidades3.insert_head(2)		
+	        @lista_cantidades3.insert_head(1)		
+		@lista_cantidades3.insert_head(3) 
+		@segundo_plato = Alimento::PlatoB.new("segundo_plato", @lista_alimentos3, @lista_cantidades3)
+	   	@lista_alimentos1 = Alimento::Lista.new
+	   	@lista_alimentos1.insert_head(@cafe)
+	    	@lista_alimentos1.insert_head(@nuez)
+		@lista_cantidades1 = Alimento::Lista.new
+  		@lista_cantidades1.insert_head(1)
+		@lista_cantidades1.insert_head(2)
+		@postre = Alimento::PlatoB.new("postre", @lista_alimentos2, @lista_cantidades2)
+		@menu_dietetico = [@plato_principal, @segundo_plato, @postre];
+		@precios_menu = [60,40,20];
+	end
+	context "Programación Funcional" do
+		it "Calculando la huella nutricional máxima de un menú dietético" do
+			expect(@menu_dietetico.collect { |x| x.huella_nutricional }.max).to eq(1.5) 
+		end
+		it "Generamos pruebas para incrementar el precio de los platos" do
+			@huella_nutricional_max = @menu_dietetico.collect { |x| x.huella_nutricional }.max
+			@porcentaje = 0.0
+
+			if(@huella_nutricional_max < 2)
+				@porcentaje = 0.10
+			elsif(@huella_nutricional_max > 2 && @huella_nutricional_max < 5)
+				@porcentaje = 0.20
+			else
+				@procentaje = 0.30
+			end
+
+			@precios_modificados = @precios_menu.collect { |x| x += x * @porcentaje }
+		end
+	end
+end
+
 end

@@ -1,3 +1,25 @@
+# = platoA.rb
+#
+# Autor:: David Marcos Ramallo Gracia
+# Alu:: alu0101061320@ull.edu.es
+#
+# == Module Alimento
+#
+# Con este modulo se pretende contener la clase Alimento
+#
+# === Clase platoA
+#
+# Definicion de la clase *platoA* compuesta por
+# * metodo *initialize*: encargado de inicializar valores
+# * metodo *por_proteinas*: recorre la lista de alimentos y devuelve el porcentaje de proteinas
+# * metodo *por_carbohidratos*: recorre la lista de alimentos y devuelve el porcentaje de carbohidratos
+# * metodo *por_lipidos*: recorre la lista de alimentos y devuelve el porcentaje lipidos 
+# * metodo *valor_energetico*: devuelve el valor energetico del plato
+# * metodo *total_nutrientes*: devuelve el total de los nutrientes (la suma de todos ellos)
+# * metodo *to_s*: devuelve la cadena de un plato 
+# * metodo *<=>*: comparar platos por su valor energetico
+#
+#
 module Alimento
 class PlatoA
 include Comparable
@@ -63,8 +85,9 @@ def to_s
 	end					
 	return cadena
 end
-										def <=>(otroPlato)		
-											return valor_energetico <=> otroPlato.valor_energetico			end
+def <=>(otroPlato)		
+	return valor_energetico <=> otroPlato.valor_energetico
+end
 
 end
 end

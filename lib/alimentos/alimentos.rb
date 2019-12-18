@@ -1,3 +1,22 @@
+# = alimentos.rb
+#
+# Autor:: David Marcos Ramallo Gracia
+# Alu:: alu0101061320@ull.edu.es
+#
+# == Module Alimento
+#
+# Con este modulo se pretende contener la clase Alimento
+#
+# === Clase Alimento
+#
+# Definicion de la clase *Alimento* compuesta por
+# * metodo *initialize*: encargado de inicializar valores
+# * metodo *to_s*: devuelve los valores de un alimento
+# * metodo *valorEnergetico*: devuelve el valor energetico de un alimento
+# * metodo *<=>*: metodo definido para comparar un alimento con otro a partir de su valor energetico
+# * metodo *impactoAmbiental*: devuelve el impacto ambiental de un alimento
+# 
+#
 module Alimento
 class Alimento
         include Comparable

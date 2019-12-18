@@ -1,3 +1,22 @@
+# = lista.rb
+#
+# Autor:: David Marcos Ramallo Gracia
+# Alu:: alu0101061320@ull.edu.es
+#
+# == Module Alimento
+#
+# Con este modulo se pretende contener la clase Alimento
+#
+# === Clase Lista
+#
+# Definicion de la clase *Alimento* compuesta por
+# * metodo *initialize*: encargado de inicializar valores
+# * metodo *insert_head*: funcion que recibe valor e inserta ese valor en lista por su cabeza
+# * metodo *extract_head*: funcion que extrae el valor que encabeza la lista
+# * metodo *insert_tail*: recibe valor y lo inserta en la lista por la cabeza
+# * metodo *extract_tail*: extrae el valor de la cola de la lista
+# * metodo each: recorre la lista
+#
 module Alimento
 Node = Struct.new(:value, :next, :prev)
 class Lista
