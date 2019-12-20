@@ -1,4 +1,4 @@
-<h1 id="titulo" style="background-color: red">PRACTICA 8 - DESARROLLO DIRIGIDO POR PRUEBAS TDD - HERENCIA Y MODULO</h1>
+<h1 id="titulo" style="background-color: red">PRACTICA 9 - DESARROLLO DIRIGIDO POR PRUEBAS TDD - PROGRAMACION FUNCIONAL Y DOCUMENTACION</h1>
 
 <h3 id="info"><strong>Autor:</strong> David Marcos Ramallo Gracia </h3>
 
@@ -8,7 +8,7 @@
 	<li><u>Grado</u>: Grado en ingeniería informática</li>
 	<li><u>Asignatura</u>: Lenguajes y paradigmas de programación</li>
 	<li><u>Curso</u>: Tercero</li>
-	<li><u>Fecha</u>: 28/11/2019</li>
+	<li><u>Fecha</u>: 20/12/2019</li>
 	<li><u>Objetivo</u>: Cálculo de nutrientes y alimentos</li>
 
 </ul>
