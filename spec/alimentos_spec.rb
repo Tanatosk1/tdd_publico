@@ -422,4 +422,39 @@ describe "Menú Diétetico" do
 	end
 end
 
+describe "DSL Menú" do
+    before :all do
+      @plato = Alimento::PlatoB.new("plato_principal") do
+        nombre "Plato Principal"
+
+        alimento :descripcion => "Salmón",
+		:proteinas => 19.9,
+          	:carbohidratos => 0.0,
+          	:lipidos => 13.6,
+          	:gei => 6.0,
+		:terreno => 3.7,
+		:cantidad => 1 
+      end
+      @plato2 = Alimento::PlatoB.new("segundo_plato") do
+      	nombre "Segundo Plato"
+
+	alimento :descripcion => "Carne de vaca",
+		:proteinas => 21.1,
+		:carbohidratos => 0.0,
+		:lipidos => 3.1,
+		:gei => 50.0,
+		:terreno => 164.0,
+		:cantidad => 2
+      end
+    end
+    
+    context "Correcta inicialización con DSL" do
+    	it "Comprobamos que los atributos contiene sus valores" do
+		expect(@plato.emisionesGEI.nil?).to eq(false) 
+	end
+    end
+
 end
+	
+end
+

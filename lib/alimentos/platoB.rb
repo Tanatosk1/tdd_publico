@@ -19,7 +19,7 @@
 #
 module Alimento
 class PlatoB < PlatoA
-	def initialize(nombre, lista_alimentos, lista_cantidades)
+	def initialize(nombre, lista_alimentos = nil, lista_cantidades = nil)
 		super(nombre, lista_alimentos, lista_cantidades)
 	end
 	def emisionesGEI
