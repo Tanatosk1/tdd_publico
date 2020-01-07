@@ -19,8 +19,11 @@
 #
 module Alimento
 class PlatoB < PlatoA
-	def initialize(nombre, lista_alimentos = nil, lista_cantidades = nil)
+	def initialize(nombre, lista_alimentos = [], lista_cantidades = [],&block)
 		super(nombre, lista_alimentos, lista_cantidades)
+		 if block_given?
+        		instance_eval &block
+      		 end
 	end
 	def emisionesGEI
 		emisionesGEI = 0.0
@@ -74,6 +77,13 @@ class PlatoB < PlatoA
 
 		# Media
 		return ((indice_energia + indice_emisiones) / 2)
+	end
+	def nombre(str)
+      		@nombre = str
+    	end
+	def alimento(h)
+		@lista_alimentos << Alimento.new(h[:descripcion],h[:proteinas],h[:cabrohidratos],h[:lipidos],h[:gei],h[:terreno])
+		@lista_cantidades << h[:cantidad]
 	end	
 end
 end
