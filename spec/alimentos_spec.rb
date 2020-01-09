@@ -455,4 +455,38 @@ describe "DSL Plato" do
 
 end
 end
+
+describe "DSL Menú" do
+	before :all do
+		@lista_alimentos2 = Alimento::Lista.new
+	   	@lista_alimentos2.insert_head(@salmon)
+	    	@lista_alimentos2.insert_head(@lentejas)
+	     	@lista_alimentos2.insert_head(@carne_vaca)
+       		@lista_alimentos2.insert_head(@cafe)
+		@lista_cantidades2 = Alimento::Lista.new
+  		@lista_cantidades2.insert_head(1)
+		@lista_cantidades2.insert_head(2)
+		@lista_cantidades2.insert_head(1)
+		@lista_cantidades2.insert_head(3)
+		@menu = Alimento::Menu.new("Combinado nº 1") do
+		Descripcion "Plato Platazo"
+		Componente :descripcion => "Plato de Salmón",
+			:alimentos => @lista_alimentos2,
+			:cantidades => @lista_cantidades2,
+			:precio => 60.00
+		Precio 60.00
+		end
+	end
+	context "Probado Menú DSL" do
+		it "Probando nombre" do
+			expect(@menu.nombre).to eq("Combinado nº 1")
+		end
+		it "Probando descripcion" do
+			expect(@menu.descripcion).to eq("Plato Platazo")
+		end
+		it "Probado precio" do
+			expect(@menu.precio).to eq(60.00)
+		end
+	end
+end
 end
