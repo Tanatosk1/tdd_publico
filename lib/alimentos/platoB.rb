@@ -47,6 +47,9 @@ class PlatoB < PlatoA
 		cadena = ""
 		i = 0
 		valorEtotal = 0.0
+		if @lista_alimentos.size <= 0
+			return "Plato sin alimentos"
+		end
 		while i< @lista_alimentos.size do			
 			cadena+= "Energia #{@lista_alimentos[i].nombre} -> #{@lista_alimentos[i].valorEnergetico} "
 			valorEtotal+= @lista_alimentos[i].valorEnergetico

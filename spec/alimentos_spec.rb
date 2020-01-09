@@ -422,11 +422,11 @@ describe "Menú Diétetico" do
 	end
 end
 
-describe "DSL Menú" do
-    before :all do
+describe "DSL Plato" do
+    before :each do
       @plato = Alimento::PlatoB.new("plato_principal") do
         nombre "Plato Principal"
-
+	
         alimento :descripcion => "Salmón",
 		:proteinas => 19.9,
           	:carbohidratos => 0.0,
@@ -446,7 +446,6 @@ describe "DSL Menú" do
 		:terreno => 164.0,
 		:cantidad => 2
       end
-    end
     
     context "Correcta inicialización con DSL" do
     	it "Comprobamos que los atributos contiene sus valores" do
@@ -455,6 +454,5 @@ describe "DSL Menú" do
     end
 
 end
-	
 end
-
+end
