@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["David Ramallo"]
   spec.email         = ["alu0101061320@ull.edu.es"]
 
-  spec.summary       = %q{Práctica 6}
-  spec.description   = %q{Práctica 6: Cálculo}
+  spec.summary       = %q{Desarrollo de proyecto en Ruby}
+  spec.description   = %q{Desarrollo de proyecto en Ruby - LPP}
   spec.homepage      = "https://github.com/ULL-ESIT-LPP-1920/tdd-alu0101061320.git"
 
   spec.metadata["allowed_push_host"] = "https://github.com/ULL-ESIT-LPP-1920/tdd-alu0101061320.git"
@@ -33,4 +33,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "guard"
   spec.add_development_dependency "guard-rspec"
   spec.add_development_dependency "guard-bundler"
+  spec.add_development_dependency "coveralls"
 end
